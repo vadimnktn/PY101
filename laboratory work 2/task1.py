@@ -7,10 +7,7 @@ increase = 0.05  # Ежемесячный рост цен
 
 month = 1
 while money_capital + month * salary - spend * month >= 0:
-    if month == 1:
-        pass
-    else:
-        spend = spend * (1 + increase)
+    if month != 1: spend = spend * (1 + increase)
     month += 1
 
 print("Количество месяцев, которое можно протянуть без долгов:", month)
