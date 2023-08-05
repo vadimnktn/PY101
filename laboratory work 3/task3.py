@@ -2,21 +2,17 @@
 def count_letters(string_): # словарь из букв и их количества
     str_ = string_.lower()
     slovar_kolich = {}
-    for let in list(str_):
-        kolvo = 0
+    for let in str_:
         if let.isalpha():
-            for letpovtor in list(str_):
-                if let == letpovtor:
-                    kolvo += 1
-                    slovar_kolich[let] = kolvo
+            if let not in slovar_kolich:
+                slovar_kolich[let] =1
+            else:
+                slovar_kolich[let] += 1
     return slovar_kolich
 
 # TODO Напишите функцию calculate_frequency
 def calculate_frequency(slovar_):
-    kol_bukv = 0                        # Будет содержать общее количество букв в словаре
-    for chislo, in slovar_:
-         kol_bukv += slovar_[chislo]
-
+    kol_bukv = sum(slovar_.values())
     slov_chast = {}                     # Словарь с частотами букв
     for bukv in slovar_:
         slov_chast[bukv] = slovar_[bukv] / kol_bukv

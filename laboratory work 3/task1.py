@@ -1,13 +1,8 @@
 # TODO Напишите функцию для поиска индекса товара
 def index_itemses(func_items_list, tovar):
-    loose = 0
-    for i in range(0, len(func_items_list)):
-        if func_items_list[i] == tovar:
+    for i, value in enumerate(func_items_list):
+        if value == tovar:
             return i
-        else:
-            loose += 1
-    if loose >= len(items_list):
-        return None
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
